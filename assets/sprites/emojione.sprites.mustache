@@ -7,20 +7,20 @@
   text-indent: -9999em;
   image-rendering: optimizeQuality;
   font-size: inherit;
-  height: 64px;
-  width: 64px;
-  top: -3px;
+  height: 20px;
+  width: 20px;
   position: relative;
   display: inline-block;
-  margin: 0 .15em;
+  margin: 0;
   line-height: normal;
   vertical-align: middle;
-  background-image: url('emojione.sprites.png');
+  background-image: url('../images/emojione.sprites.png');
   background-repeat: no-repeat;
+  background-size: 902px 902px;
 }
 
 {{#items}}
 .{{name}} {
-  background-position: {{px.offset_x}} {{px.offset_y}};
+  background-position: {{position_x}}px {{position_y}}px;
 }
 {{/items}}
