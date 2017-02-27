@@ -9,3 +9,11 @@ emojis.json
 .idea
 node_modules
 .sass-cache
+assets/fonts
+assets/other
+assets/png
+assets/png_128x128
+assets/png_512x512
+assets/png_bw
+assets/svg
+assets/svg_bw
