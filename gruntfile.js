@@ -15,12 +15,17 @@ module.exports = function(grunt) {
                 src: 'assets/png/*.png',
                 dest: 'assets/sprites/emojione.sprites.png',
                 destCss: 'assets/sprites/emojione.sprites.css',
-                'cssTemplate': 'assets/sprites/emojione.sprites.mustache',
-                'algorithm': 'binary-tree',
-                'cssVarMap': function (sprite) {
+                cssTemplate: 'assets/sprites/emojione.sprites.mustache',
+                algorithm: 'binary-tree',
+                cssVarMap: function (sprite) {
                     sprite.name = 'emojione-' + sprite.name;
                     sprite.position_x = -sprite.x / 2;
                     sprite.position_y = -sprite.y / 2;
+                },
+                cssSort: function (spriteA, spriteB) {
+                    if (spriteA.name < spriteB.name) return -1;
+                    if (spriteA.name > spriteB.name) return 1;
+                    return 0;
                 },
                 padding: 2
             }
@@ -102,7 +107,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-qunit');
-    // grunt.registerTask('default', ['jshint','jsonlint', 'sprite:pngsprites', 'sass', 'svgstore', 'uglify', 'cssmin', 'imageoptim']);
-    grunt.registerTask('default', ['jshint','jsonlint', 'sass', 'svgstore', 'uglify', 'cssmin']);
+    grunt.registerTask('default', ['jshint','jsonlint', 'sprite:pngsprites', 'sass', 'svgstore', 'uglify', 'cssmin']);
+    // grunt.registerTask('default', ['jshint','jsonlint', 'sass', 'svgstore', 'uglify', 'cssmin']);
     grunt.registerTask('travis', ['qunit']);
 };
