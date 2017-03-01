@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 cssTemplate: 'assets/sprites/emojione.sprites.mustache',
                 algorithm: 'binary-tree',
                 cssVarMap: function (sprite) {
-                    sprite.name = 'emojione-' + sprite.name;
+                    sprite.name = 'emojione-' + sprite.name.toLowerCase();
                     sprite.position_x = -sprite.x / 2;
                     sprite.position_y = -sprite.y / 2;
                 },
