@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     if (spriteA.name > spriteB.name) return 1;
                     return 0;
                 },
-                padding: 2
+                padding: 6
             }
 
         },
