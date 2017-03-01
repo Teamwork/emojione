@@ -71,9 +71,6 @@ module.exports = function(grunt) {
         },
         // OPTIMIZE PNGs
         imageoptim: {
-            pngs: {
-                src: ['assets/png', 'assets/png']
-            },
             sprite: {
                 src: ['assets/sprites', 'assets/sprites']
             }
