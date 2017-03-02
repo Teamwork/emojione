@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                 cssTemplate: 'assets/sprites/emojione.sprites.mustache',
                 algorithm: 'binary-tree',
                 cssVarMap: function (sprite) {
-                    sprite.name = 'emojione-' + sprite.name;
+                    sprite.name = 'emojione-' + sprite.name.toLowerCase();
                     sprite.position_x = -sprite.x / 2;
                     sprite.position_y = -sprite.y / 2;
                 },
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                     if (spriteA.name > spriteB.name) return 1;
                     return 0;
                 },
-                padding: 2
+                padding: 6
             }
 
         },
@@ -71,9 +71,6 @@ module.exports = function(grunt) {
         },
         // OPTIMIZE PNGs
         imageoptim: {
-            pngs: {
-                src: ['assets/png', 'assets/png']
-            },
             sprite: {
                 src: ['assets/sprites', 'assets/sprites']
             }
